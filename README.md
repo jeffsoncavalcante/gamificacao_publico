@@ -15,3 +15,5 @@ group by u.name order by "Total" desc;</code></p>
 <code>crontab -e
 10  23 *   *   *     node /home/gamificao/index.js 
 </code>
+<p>9 - Definir o ip do servidor, usuario e senha de acesso ao banco de dados do hubsoft</p>
+<p>10 - Definir o ip do servidor, usuario e senha de acesso ao banco de dados do auxiliar</p>
