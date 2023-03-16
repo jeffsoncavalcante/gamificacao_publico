@@ -11,9 +11,10 @@
 <code>select u.name, sum(pontos_positivos) as 'Pontos Positivos', sum(pontos_negativos) as 'Pontos Negativos', (sum(pontos_positivos) - sum(pontos_negativos)) as 'Total', case when (sum(pontos_positivos) - sum(pontos_negativos))<=299 then ((sum(pontos_positivos) - sum(pontos_negativos))*0.10) when (sum(pontos_positivos) - sum(pontos_negativos))>=300 and (sum(pontos_positivos) - sum(pontos_negativos))<=399  then ((sum(pontos_positivos) - sum(pontos_negativos))*0.30) when (sum(pontos_positivos) - sum(pontos_negativos))>=400 then ((sum(pontos_positivos) - sum(pontos_negativos))*0.50) end as "Valor R$"
 from pontos p join users u on p.users_id_users = u.id_users where $__timeFilter(p.data_cadastro)
 group by u.name order by "Total" desc;</code></p>
-<p>8 - Criar um crontab para executar o index.js (recomendo executar todo noite ou de madrugada) e o crontab deve ser excutado sem sudo</p>
+<p>8 - Criar um crontab para executar o index.js (recomendo executar todo noite ou de madrugada) e o crontab deve ser excutado sem sudo
 <code>crontab -e
 10  23 *   *   *     node /home/gamificao/index.js 
 </code>
+</p>
 <p>9 - Definir o ip do servidor, usuario e senha de acesso ao banco de dados do hubsoft</p>
 <p>10 - Definir o ip do servidor, usuario e senha de acesso ao banco de dados do auxiliar</p>
