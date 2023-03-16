@@ -12,7 +12,9 @@
 from pontos p join users u on p.users_id_users = u.id_users where $__timeFilter(p.data_cadastro)
 group by u.name order by "Total" desc;</code></p>
 <p>8 - Criar um crontab para executar o index.js (recomendo executar todo noite ou de madrugada) e o crontab deve ser excutado sem sudo
-<code>crontab -e
+<code>
+crontab -e
+<br/>
 10  23 *   *   *     node /home/gamificao/index.js 
 </code>
 </p>
